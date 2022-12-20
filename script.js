@@ -6,10 +6,10 @@ class PomodoroClock extends React.Component {
       breakTime: 5,
       sessionTime: 25,
       sessionMinutes: 25,
-      sessionSeconds: '00',
+      sessionSeconds: "00",
       timerIsOn: false,
       pause: false,
-      session: 'Session',
+      session: "Session",
     };
   }
 
@@ -40,8 +40,8 @@ class PomodoroClock extends React.Component {
     ) {
       this.setState({
         sessionTime: this.state.sessionTime + 1,
-        sessionMinutes: '0' + (parseInt(this.state.sessionTime) + 1),
-        sessionSeconds: '00',
+        sessionMinutes: "0" + (parseInt(this.state.sessionTime) + 1),
+        sessionSeconds: "00",
       });
     } else if (
       this.state.sessionTime < 60 &&
@@ -51,7 +51,7 @@ class PomodoroClock extends React.Component {
       this.setState({
         sessionTime: this.state.sessionTime + 1,
         sessionMinutes: parseInt(this.state.sessionTime) + 1,
-        sessionSeconds: '00',
+        sessionSeconds: "00",
       });
     }
   };
@@ -66,13 +66,13 @@ class PomodoroClock extends React.Component {
       this.setState({
         sessionTime: this.state.sessionTime - 1,
         sessionMinutes: this.state.sessionMinutes - 1,
-        sessionSeconds: '00',
+        sessionSeconds: "00",
       });
     } else if (this.state.sessionTime > 1 && this.state.sessionTime <= 10) {
       this.setState({
         sessionTime: this.state.sessionTime - 1,
-        sessionMinutes: '0' + (this.state.sessionMinutes - 1),
-        sessionSeconds: '00',
+        sessionMinutes: "0" + (this.state.sessionMinutes - 1),
+        sessionSeconds: "00",
       });
     }
   };
@@ -92,10 +92,10 @@ class PomodoroClock extends React.Component {
       countDown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
         if (
-          this.state.sessionMinutes === '00' &&
-          this.state.sessionSeconds === '00'
+          this.state.sessionMinutes === "00" &&
+          this.state.sessionSeconds === "00"
         ) {
-          document.getElementById('beep').play();
+          document.getElementById("beep").play();
         }
         // check if we should stop it!
         if (secondsLeft < 0) {
@@ -129,12 +129,12 @@ class PomodoroClock extends React.Component {
       });
     } else if (remainderSeconds <= 9) {
       this.setState({
-        sessionMinutes: '0' + minutes,
-        sessionSeconds: '0' + remainderSeconds,
+        sessionMinutes: "0" + minutes,
+        sessionSeconds: "0" + remainderSeconds,
       });
     } else {
       this.setState({
-        sessionMinutes: '0' + minutes,
+        sessionMinutes: "0" + minutes,
         sessionSeconds: remainderSeconds,
       });
     }
@@ -145,18 +145,18 @@ class PomodoroClock extends React.Component {
     if (this.state.pause === false) {
       if (this.state.breakTime > 9) {
         this.setState({
-          session: 'Break',
+          session: "Break",
           sessionMinutes: this.state.breakTime,
-          sessionSeconds: '00',
+          sessionSeconds: "00",
           timerIsOn: false,
           pause: true,
         });
         this.timer();
       } else {
         this.setState({
-          session: 'Break',
-          sessionMinutes: '0' + this.state.breakTime,
-          sessionSeconds: '00',
+          session: "Break",
+          sessionMinutes: "0" + this.state.breakTime,
+          sessionSeconds: "00",
           timerIsOn: false,
           pause: true,
         });
@@ -165,18 +165,18 @@ class PomodoroClock extends React.Component {
     } else {
       if (this.state.sessionTime > 9) {
         this.setState({
-          session: 'Session',
+          session: "Session",
           sessionMinutes: this.state.sessionTime,
-          sessionSeconds: '00',
+          sessionSeconds: "00",
           timerIsOn: false,
           pause: false,
         });
         this.timer();
       } else {
         this.setState({
-          session: 'Session',
-          sessionMinutes: '0' + this.state.sessionTime,
-          sessionSeconds: '00',
+          session: "Session",
+          sessionMinutes: "0" + this.state.sessionTime,
+          sessionSeconds: "00",
           timerIsOn: false,
           pause: false,
         });
@@ -189,16 +189,16 @@ class PomodoroClock extends React.Component {
   resetTime = () => {
     clearInterval(countDown);
     this.setState({
-      session: 'Session',
+      session: "Session",
       breakTime: 5,
       sessionTime: 25,
       sessionMinutes: 25,
-      sessionSeconds: '00',
+      sessionSeconds: "00",
       timerIsOn: false,
       pause: false,
     });
-    document.getElementById('beep').currentTime = 0;
-    document.getElementById('beep').pause();
+    document.getElementById("beep").currentTime = 0;
+    document.getElementById("beep").pause();
   };
 
   render() {
@@ -283,5 +283,5 @@ class PomodoroClock extends React.Component {
   }
 }
 
-ReactDOM.render(<PomodoroClock />, document.getElementById('root'));
+ReactDOM.render(<PomodoroClock />, document.getElementById("root"));
 //ReactDOM.render(<PomodoroClock />, document.getElementById("root"));

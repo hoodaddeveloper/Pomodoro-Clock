@@ -5,58 +5,58 @@
 }
 
 body {
-  background-color: #b71c1c;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   outline: 0;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  background-color: #b71c1c;
 }
 
 #container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 #clock {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   width: 450px;
+  display: flex;
   min-height: 650px;
+  align-items: center;
   border-radius: 16px;
   border-radius: 26px;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(145deg, #c41e1e, #a51919);
   box-shadow: 5px 5px 10px #a31919, -5px -5px 10px #cb1f1f;
 }
 
 #container h4 {
   color: #b71c1c;
-  margin-bottom: 20px;
   font-weight: 600;
+  margin-bottom: 20px;
 }
 
 #buttons {
   display: flex;
-  flex-direction: row;
   color: #f3e5f5;
+  flex-direction: row;
 }
 
 #timer-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #f3e5f5;
   width: 350px;
   height: 350px;
+  display: flex;
+  color: #f3e5f5;
   border-radius: 50%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(-145deg, #c41e1e, #a51919);
   box-shadow: 5px 5px 9px #a71919, -5px -5px 9px #c71f1f;
 }
